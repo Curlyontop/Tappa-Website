@@ -6,274 +6,295 @@
 <title>Tappa Support</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f8f9fa;
+color:#202124;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f8f9fa;
-  color: #202124;
-}
-
-.chatbot {
-  width: 100%;
-  max-width: 560px;
-  height: 100vh;
-  max-height: 850px;
-  margin: auto;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+.chatbot{
+width:100%;
+max-width:600px;
+height:100vh;
+max-height:900px;
+margin:auto;
+background:#fff;
+display:flex;
+flex-direction:column;
+overflow:hidden;
+box-shadow:0 2px 18px rgba(0,0,0,.08);
 }
 
 /* HEADER */
 
-.header {
-  padding: 22px;
-  color: white;
-  background: linear-gradient(
-    135deg,
-    #4285f4 0%,
-    #34a853 35%,
-    #fbbc05 68%,
-    #ea4335 100%
-  );
+.header{
+padding:20px;
+color:#fff;
+background:linear-gradient(135deg,#4285f4,#34a853,#fbbc05,#ea4335);
 }
 
-.header-top {
-  display: flex;
-  align-items: center;
-  gap: 13px;
+.header-row{
+display:flex;
+align-items:center;
+gap:13px;
 }
 
-.logo {
-  width: 48px;
-  height: 48px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: bold;
-  color: #4285f4;
-  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+.logo{
+width:50px;
+height:50px;
+border-radius:50%;
+background:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:23px;
+font-weight:800;
+color:#4285f4;
+box-shadow:0 2px 8px rgba(0,0,0,.18);
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 22px;
+.header h1{
+margin:0;
+font-size:22px;
 }
 
-.header p {
-  margin: 4px 0 0;
-  font-size: 13px;
+.header p{
+margin:4px 0 0;
+font-size:13px;
 }
 
-/* WELCOME */
+/* TOP BAR */
 
-.welcome {
-  padding: 12px 16px 0;
-  font-size: 12px;
-  color: #5f6368;
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:8px 14px;
+border-bottom:1px solid #eee;
+}
+
+.status{
+font-size:12px;
+color:#34a853;
+font-weight:600;
+}
+
+.reset{
+border:0;
+background:#f1f3f4;
+padding:7px 11px;
+border-radius:16px;
+cursor:pointer;
+font-size:12px;
 }
 
 /* MESSAGES */
 
-.messages {
-  flex: 1;
-  padding: 16px;
-  overflow-y: auto;
-  scroll-behavior: smooth;
+.messages{
+flex:1;
+overflow-y:auto;
+padding:16px;
+scroll-behavior:smooth;
 }
 
-.message {
-  max-width: 88%;
-  padding: 13px 15px;
-  margin-bottom: 12px;
-  border-radius: 18px;
-  line-height: 1.48;
-  white-space: pre-line;
-  word-wrap: break-word;
-  animation: appear .2s ease;
+.message{
+max-width:88%;
+padding:13px 15px;
+margin-bottom:12px;
+border-radius:18px;
+line-height:1.5;
+white-space:pre-line;
+word-wrap:break-word;
+animation:appear .18s ease;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes appear{
+from{opacity:0;transform:translateY(5px)}
+to{opacity:1;transform:translateY(0)}
 }
 
-.bot {
-  background: #f1f3f4;
-  margin-right: auto;
-  border-bottom-left-radius: 5px;
+.bot{
+background:#f1f3f4;
+margin-right:auto;
+border-bottom-left-radius:5px;
 }
 
-.user {
-  background: #4285f4;
-  color: white;
-  margin-left: auto;
-  border-bottom-right-radius: 5px;
+.user{
+background:#4285f4;
+color:#fff;
+margin-left:auto;
+border-bottom-right-radius:5px;
+}
+
+/* INFO CARD */
+
+.info-card{
+background:#fff;
+border:1px solid #dadce0;
+border-radius:16px;
+padding:14px;
+margin:4px 0 14px;
+box-shadow:0 1px 3px rgba(0,0,0,.06);
+}
+
+.info-title{
+font-weight:bold;
+margin-bottom:8px;
+}
+
+.review-flow{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:5px;
+font-size:11px;
+text-align:center;
+}
+
+.review-step{
+flex:1;
+padding:9px 3px;
+background:#f8f9fa;
+border-radius:10px;
+}
+
+.arrow{
+font-weight:bold;
+color:#4285f4;
 }
 
 /* QUICK BUTTONS */
 
-.quick-title {
-  font-size: 11px;
-  color: #777;
-  padding: 0 15px 5px;
+.quick-title{
+font-size:11px;
+color:#777;
+padding:0 15px 6px;
 }
 
-.quick {
-  display: flex;
-  gap: 8px;
-  padding: 0 15px 10px;
-  overflow-x: auto;
+.quick{
+display:flex;
+gap:8px;
+padding:0 15px 10px;
+overflow-x:auto;
 }
 
 .quick button,
-.action-button {
-  white-space: nowrap;
-  border: 1px solid #dadce0;
-  background: white;
-  border-radius: 20px;
-  padding: 9px 13px;
-  font-size: 13px;
-  cursor: pointer;
+.action-button{
+white-space:nowrap;
+border:1px solid #dadce0;
+background:#fff;
+border-radius:20px;
+padding:9px 13px;
+font-size:13px;
+cursor:pointer;
 }
 
 .quick button:hover,
-.action-button:hover {
-  background: #f1f3f4;
+.action-button:hover{
+background:#f1f3f4;
+}
+
+/* CONTACT */
+
+.contact-actions{
+display:flex;
+gap:8px;
+padding:0 15px 9px;
+}
+
+.contact-actions a{
+flex:1;
+text-align:center;
+text-decoration:none;
+color:#202124;
+border:1px solid #dadce0;
+border-radius:20px;
+padding:9px;
+font-size:13px;
 }
 
 /* TYPING */
 
-.typing {
-  display: none;
-  width: fit-content;
-  background: #f1f3f4;
-  padding: 11px 15px;
-  border-radius: 18px;
-  margin: 0 16px 10px;
+.typing{
+display:none;
+width:fit-content;
+background:#f1f3f4;
+padding:11px 15px;
+border-radius:18px;
+margin:0 16px 10px;
 }
 
-.dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  background: #777;
-  border-radius: 50%;
-  margin: 0 2px;
-  animation: bounce 1.2s infinite;
+.dot{
+display:inline-block;
+width:6px;
+height:6px;
+background:#777;
+border-radius:50%;
+margin:0 2px;
+animation:bounce 1.2s infinite;
 }
 
-.dot:nth-child(2) {
-  animation-delay: .2s;
-}
+.dot:nth-child(2){animation-delay:.2s}
+.dot:nth-child(3){animation-delay:.4s}
 
-.dot:nth-child(3) {
-  animation-delay: .4s;
-}
-
-@keyframes bounce {
-  0%, 60%, 100% {
-    transform: translateY(0);
-  }
-
-  30% {
-    transform: translateY(-5px);
-  }
-}
-
-/* CONTACT BUTTONS */
-
-.contact-actions {
-  display: flex;
-  gap: 8px;
-  padding: 0 15px 10px;
-}
-
-.contact-actions a {
-  flex: 1;
-  text-align: center;
-  text-decoration: none;
-  color: #202124;
-  border: 1px solid #dadce0;
-  border-radius: 20px;
-  padding: 9px;
-  font-size: 13px;
+@keyframes bounce{
+0%,60%,100%{transform:translateY(0)}
+30%{transform:translateY(-5px)}
 }
 
 /* INPUT */
 
-.input-area {
-  display: flex;
-  gap: 8px;
-  padding: 12px;
-  border-top: 1px solid #dadce0;
-  background: white;
+.input-area{
+display:flex;
+gap:8px;
+padding:12px;
+border-top:1px solid #dadce0;
 }
 
-input {
-  flex: 1;
-  min-width: 0;
-  border: 1px solid #dadce0;
-  border-radius: 24px;
-  padding: 13px 16px;
-  font-size: 16px;
-  outline: none;
+input{
+flex:1;
+min-width:0;
+border:1px solid #dadce0;
+border-radius:24px;
+padding:13px 16px;
+font-size:16px;
+outline:none;
 }
 
-input:focus {
-  border-color: #4285f4;
+input:focus{
+border-color:#4285f4;
 }
 
-.send {
-  border: none;
-  border-radius: 50%;
-  width: 46px;
-  height: 46px;
-  background: #4285f4;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
+.send{
+border:0;
+border-radius:50%;
+width:46px;
+height:46px;
+background:#4285f4;
+color:white;
+font-size:18px;
+cursor:pointer;
 }
 
-.send:hover {
-  background: #3367d6;
+.send:hover{
+background:#3367d6;
 }
 
-.footer {
-  text-align: center;
-  font-size: 11px;
-  color: #777;
-  padding: 6px;
+.footer{
+text-align:center;
+font-size:10px;
+color:#777;
+padding:6px;
 }
 
-/* MOBILE */
-
-@media (max-width: 600px) {
-  .chatbot {
-    max-height: none;
-  }
-
-  .header {
-    padding: 18px;
-  }
-
-  .messages {
-    padding: 14px;
-  }
+@media(max-width:600px){
+.chatbot{
+max-height:none;
+box-shadow:none;
+}
 }
 </style>
 </head>
@@ -282,132 +303,101 @@ input:focus {
 
 <div class="chatbot">
 
-  <!-- HEADER -->
+<div class="header">
+<div class="header-row">
 
-  <div class="header">
+<div class="logo">T</div>
 
-    <div class="header-top">
+<div>
+<h1>Tappa Support</h1>
+<p>Your local Google Review card assistant 🇳🇿</p>
+</div>
 
-      <div class="logo">T</div>
+</div>
+</div>
 
-      <div>
-        <h1>Tappa Support</h1>
-        <p>Your local Google Review card assistant 🇳🇿</p>
-      </div>
+<div class="topbar">
+<div class="status">● Tappa assistant online</div>
+<button class="reset" onclick="newConversation()">↻ New conversation</button>
+</div>
 
-    </div>
+<div class="messages" id="messages">
 
-  </div>
-
-
-  <!-- WELCOME -->
-
-  <div class="welcome">
-    Ask me about Tappa, prices, Google Reviews, NFC, ordering, delivery and more.
-  </div>
-
-
-  <!-- MESSAGES -->
-
-  <div class="messages" id="messages">
-
-    <div class="message bot">
+<div class="message bot">
 Kia ora! 👋 Welcome to Tappa!
 
-I'm Tappa's online assistant. I can help with:
-
-💰 Prices
-⭐ Google Reviews
-📱 NFC cards
-🚚 Delivery & pickup
-🤝 Meetings
-♾️ Our guarantee
-📞 Contacting Tappa
+I'm Tappa's online assistant. I can help with prices, orders, Google Reviews, NFC, delivery, pickup, meetings, compatibility and more.
 
 What would you like to know?
-    </div>
+</div>
 
-  </div>
+<div class="info-card">
 
+<div class="info-title">⭐ How Tappa works</div>
 
-  <!-- QUICK QUESTIONS -->
+<div class="review-flow">
 
-  <div class="quick-title">
-    Quick questions
-  </div>
+<div class="review-step">📱<br>Customer</div>
+<div class="arrow">→</div>
+<div class="review-step">🏷️<br>Tappa card</div>
+<div class="arrow">→</div>
+<div class="review-step">⭐<br>Google Review</div>
 
-  <div class="quick">
+</div>
 
-    <button onclick="quickQuestion('How much are the cards?')">
-      💰 Prices
-    </button>
+</div>
 
-    <button onclick="quickQuestion('How does the card work?')">
-      📱 How it works
-    </button>
+</div>
 
-    <button onclick="quickQuestion('Do you deliver?')">
-      🚚 Delivery
-    </button>
+<div class="quick-title">Quick questions</div>
 
-    <button onclick="quickQuestion('What is the guarantee?')">
-      ♾️ Guarantee
-    </button>
+<div class="quick">
 
-    <button onclick="quickQuestion('How do I contact Tappa?')">
-      📞 Contact
-    </button>
+<button onclick="quickQuestion('How much are the cards?')">💰 Prices</button>
 
-  </div>
+<button onclick="quickQuestion('How does the card work?')">📱 How it works</button>
 
+<button onclick="quickQuestion('Do you deliver?')">🚚 Delivery</button>
 
-  <!-- CONTACT ACTIONS -->
+<button onclick="quickQuestion('What is the guarantee?')">♾️ Guarantee</button>
 
-  <div class="contact-actions">
+<button onclick="quickQuestion('How do I order?')">🛒 Order</button>
 
-    <a href="mailto:Tappa.Aotearoa@gmail.com">
-      📧 Email
-    </a>
+<button onclick="quickQuestion('How do I contact Tappa?')">📞 Contact</button>
 
-    <a href="tel:0272755475">
-      📱 Call Tappa
-    </a>
+</div>
 
-  </div>
+<div class="contact-actions">
 
+<a href="mailto:Tappa.Aotearoa@gmail.com">📧 Email</a>
 
-  <!-- TYPING -->
+<a href="tel:0272755475">📱 Call</a>
 
-  <div class="typing" id="typing">
+</div>
 
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
+<div class="typing" id="typing">
 
-  </div>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
 
+</div>
 
-  <!-- INPUT -->
+<div class="input-area">
 
-  <div class="input-area">
+<input
+id="userInput"
+type="text"
+placeholder="Ask Tappa anything..."
+autocomplete="off">
 
-    <input
-      id="userInput"
-      type="text"
-      placeholder="Ask Tappa anything..."
-      autocomplete="off"
-    >
+<button class="send" onclick="sendMessage()">➤</button>
 
-    <button class="send" onclick="sendMessage()">
-      ➤
-    </button>
+</div>
 
-  </div>
-
-
-  <div class="footer">
-    Tappa • Wellington Region • Aotearoa 🇳🇿
-  </div>
+<div class="footer">
+Tappa • Wellington Region • Aotearoa 🇳🇿
+</div>
 
 </div>
 
@@ -415,79 +405,87 @@ What would you like to know?
 <script>
 
 /* =====================================================
-   TAPPA CHATBOT
-   Advanced rule-based assistant
+   TAPPA ASSISTANT
 ===================================================== */
 
-
-/* =====================================================
-   CONVERSATION MEMORY
-===================================================== */
-
-let lastTopic = null;
-let lastQuantity = null;
+let lastTopic=null;
+let lastQuantity=null;
+let orderQuantity=null;
+let orderStage=null;
 
 
 /* =====================================================
    TAPPA INFORMATION
 ===================================================== */
 
-const tappa = {
+const TAPPA={
 
-  business:
-`Tappa is a young Aotearoa business run by a young entrepreneur.
-
-We help local businesses make it easier for customers to leave Google Reviews using NFC cards.
-
-Tappa currently operates in the Wellington region. 🇳🇿`,
-
-  pricing:
-`💳 Tappa pricing:
+pricing:
+`💰 Tappa pricing:
 
 1 card — $30
 2 cards — $50
 
 For 3+ cards, prices are negotiated.
 
-As an estimate, 3+ cards are around $30 per card, in $30 increments. The final price is confirmed with Tappa.`,
+Estimated pricing for 3+:
+3 — ~$90
+4 — ~$120
+5 — ~$150
+6 — ~$180
+7 — ~$210
+8 — ~$240
+9 — ~$270
+10 — ~$300
 
-  howItWorks:
-`Tappa cards use NFC technology. 📱
+The 3+ prices are estimates based on approximately $30 per card. The final price is negotiated with Tappa.`,
 
-A customer brings a compatible phone close to the Tappa card.
+business:
+`Tappa is a young Aotearoa business run by a young entrepreneur.
 
-The card opens the business's Google Review page, making it easier for the customer to leave a review.
+We provide NFC Google Review cards that make it easier for customers to reach a business's Google Review page.
 
-The customer doesn't need a special Tappa app.`,
+Tappa currently operates in the Wellington region. 🇳🇿`,
 
-  delivery:
-`Yes! 🚚 Tappa offers free delivery within the Wellington region.
+works:
+`📱 How Tappa works:
+
+1. A business gets a Tappa card.
+2. Tappa sets it up with the business's Google Review page.
+3. A customer brings a compatible phone close to the card.
+4. The Google Review page opens.
+5. The customer can leave a review. ⭐
+
+No special Tappa app is required.`,
+
+delivery:
+`🚚 Yes! Tappa offers free delivery within the Wellington region.
 
 Pickup can also be arranged.
 
 We prefer to meet the business beforehand so we can get to know them and understand what they need.`,
 
-  meeting:
-`Tappa prefers a meeting before an order. 🤝
+meeting:
+`🤝 Tappa prefers a meeting before an order.
 
 The meeting is completely free and can be:
 
 • In person
 • Online
 
-It's a chance to get to know the business and make sure Tappa is the right fit.`,
+It's simply a chance to get to know the business and work out what they need.`,
 
-  guarantee:
-`Tappa has a forever guarantee. ♾️
+guarantee:
+`♾️ Tappa has a forever guarantee.
 
-If the card breaks or stops working, Tappa will fix it.
+If your card breaks or stops working, we'll fix it.
 
-If it can't be fixed, you can get your money back.
+If it can't be fixed, we'll refund you.
 
 Even if you simply don't like it, you can get your money back.`,
 
-  contact:
-`You can contact Tappa here:
+contact:
+`📞 Contact Tappa:
 
 📧 Tappa.Aotearoa@gmail.com
 📱 027 275 5475
@@ -495,17 +493,17 @@ Even if you simply don't like it, you can get your money back.`,
 🗓️ Weekdays: 3:00 PM–8:00 AM the next day
 🗓️ Weekends: Anytime.`,
 
-  location:
-`Tappa currently operates in the Wellington region. 🇳🇿
+location:
+`🇳🇿 Tappa currently operates in the Wellington region.
 
-Delivery is available within the Wellington region.`,
+Free delivery is available within the Wellington region.
 
-  fallback:
-`Kia ora! 👋 I'm not sure about that one, and I don't want to give you the wrong information.
+If you're outside the Wellington region, contact us and we'll let you know what's possible.`,
 
-I don't want to make something up and accidentally give you the wrong answer.
+fallback:
+`Kia ora! 👋 I don't want to guess and give you the wrong information.
 
-Please contact the Tappa team:
+That question is best answered by the Tappa team.
 
 📧 Tappa.Aotearoa@gmail.com
 📱 027 275 5475
@@ -517,747 +515,760 @@ Please contact the Tappa team:
 
 
 /* =====================================================
-   NUMBER RECOGNITION
+   TEXT NORMALISATION
 ===================================================== */
 
-function getQuantity(text) {
+function clean(text){
 
-  const numbers = {
-
-    "one": 1,
-    "two": 2,
-    "three": 3,
-    "four": 4,
-    "five": 5,
-    "six": 6,
-    "seven": 7,
-    "eight": 8,
-    "nine": 9,
-    "ten": 10
-
-  };
-
-  for (const word in numbers) {
-
-    if (text.includes(word)) {
-      return numbers[word];
-    }
-
-  }
-
-  const match = text.match(/\b([0-9]+)\b/);
-
-  if (match) {
-    return parseInt(match[1]);
-  }
-
-  if (
-    text.includes("couple") ||
-    text.includes("pair")
-  ) {
-    return 2;
-  }
-
-  return null;
+return text
+.toLowerCase()
+.replace(/[’']/g,"")
+.replace(/[^a-z0-9\s$]/g," ")
+.replace(/\s+/g," ")
+.trim();
 
 }
 
 
 /* =====================================================
-   CLEAN TEXT
+   KEYWORD CHECK
 ===================================================== */
 
-function cleanText(text) {
+function has(text,words){
 
-  return text
-    .toLowerCase()
-    .replace(/[?!.,]/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
+return words.some(word=>text.includes(word));
 
 }
 
 
 /* =====================================================
-   KEYWORD MATCHING
+   QUANTITY
 ===================================================== */
 
-function hasAny(text, words) {
+function getQuantity(text){
 
-  return words.some(word => text.includes(word));
+const numbers={
+one:1,
+two:2,
+three:3,
+four:4,
+five:5,
+six:6,
+seven:7,
+eight:8,
+nine:9,
+ten:10,
+eleven:11,
+twelve:12,
+thirteen:13,
+fourteen:14,
+fifteen:15,
+twenty:20
+};
+
+for(const word in numbers){
+
+if(new RegExp("\\b"+word+"\\b").test(text)){
+return numbers[word];
+}
+
+}
+
+const match=text.match(/\b([0-9]+)\b/);
+
+if(match){
+return parseInt(match[1]);
+}
+
+if(has(text,["couple","pair"])){
+return 2;
+}
+
+return null;
 
 }
 
 
 /* =====================================================
-   REMEMBER TOPIC
+   PRICE
 ===================================================== */
 
-function remember(topic) {
+function price(quantity){
 
-  lastTopic = topic;
-
+if(!quantity){
+return TAPPA.pricing;
 }
 
+if(quantity===1){
+return "💰 1 Tappa card is $30.";
+}
 
-/* =====================================================
-   PRICE CALCULATOR
-===================================================== */
+if(quantity===2){
+return "💰 2 Tappa cards are $50.";
+}
 
-function priceForQuantity(quantity) {
+const estimate=quantity*30;
 
-  if (!quantity) {
-    return tappa.pricing;
-  }
-
-
-  if (quantity === 1) {
-
-    return `💰 1 Tappa card is $30.`;
-
-  }
-
-
-  if (quantity === 2) {
-
-    return `💰 2 Tappa cards are $50.`;
-
-  }
-
-
-  if (quantity >= 3) {
-
-    const estimate = quantity * 30;
-
-    return `💰 For ${quantity} cards, the estimated price is around $${estimate}.
+return `💰 For ${quantity} Tappa cards, the estimated price is around $${estimate}.
 
 That's based on approximately $30 per card for 3+ cards.
 
-The final price is negotiated with Tappa.
+The final 3+ price is negotiated with Tappa.
 
-🤝 We'd prefer to meet with you first and work out exactly what you need.`;
-
-  }
-
-
-  return tappa.pricing;
+🤝 We prefer to arrange a free meeting first.`;
 
 }
 
 
 /* =====================================================
-   MAIN RESPONSE ENGINE
+   LOCAL QUESTION TRACKING
 ===================================================== */
 
-function getResponse(originalText) {
-
-  const text = cleanText(originalText);
-
-  const quantity = getQuantity(text);
-
-
-  /* ==============================================
-     COMBINED QUESTION FLAGS
-  ============================================== */
+/*
+This is privacy-friendly local tracking.
+It stays in the visitor's browser.
+It does NOT send their questions to Tappa.
+*/
+
+function trackQuestion(question){
 
-  const asksPrice = hasAny(text, [
-    "price",
-    "prices",
-    "cost",
-    "costs",
-    "how much",
-    "pricing",
-    "card price",
-    "card cost",
-    "expensive",
-    "cheap",
-    "afford"
-  ]);
+try{
 
-  const asksDelivery = hasAny(text, [
-    "deliver",
-    "delivery",
-    "shipping",
-    "ship",
-    "drop off",
-    "drop it off"
-  ]);
+let stats=JSON.parse(
+localStorage.getItem("tappaQuestionStats")||"{}"
+);
 
-  const asksPickup = hasAny(text, [
-    "pickup",
-    "pick up",
-    "collect",
-    "collection"
-  ]);
+const key=clean(question);
 
-  const asksMeeting = hasAny(text, [
-    "meeting",
-    "meet",
-    "visit",
-    "come in",
-    "come over",
-    "in person",
-    "online meeting"
-  ]);
+stats[key]=(stats[key]||0)+1;
 
+localStorage.setItem(
+"tappaQuestionStats",
+JSON.stringify(stats)
+);
 
-  /* ==============================================
-     PRICING + DELIVERY COMBINED
-  ============================================== */
+}catch(error){
 
-  if (asksPrice && (asksDelivery || asksPickup)) {
+/* Tracking failure should never break the chatbot. */
+
+}
 
-    remember("pricing");
+}
 
-    let priceAnswer = quantity
-      ? priceForQuantity(quantity)
-      : tappa.pricing;
 
-    return priceAnswer +
-      `\n\n🚚 ${tappa.delivery}`;
+/* =====================================================
+   MAIN BRAIN
+===================================================== */
 
-  }
+function respond(original){
 
+const text=clean(original);
 
-  /* ==============================================
-     PRICING + MEETING
-  ============================================== */
+const quantity=getQuantity(text);
 
-  if (asksPrice && asksMeeting) {
 
-    remember("pricing");
+/* ---------- GREETING ---------- */
 
-    return (quantity
-      ? priceForQuantity(quantity)
-      : tappa.pricing) +
-      `\n\n${tappa.meeting}`;
+const greetingOnly=has(text,[
+"hello",
+"hi",
+"hey",
+"kia ora",
+"morena",
+"yo",
+"sup",
+"gday",
+"good morning",
+"good afternoon",
+"good evening"
+]);
 
-  }
+const actualQuestion=has(text,[
+"price",
+"how much",
+"deliver",
+"delivery",
+"pickup",
+"pick up",
+"order",
+"work",
+"card",
+"google",
+"review",
+"nfc",
+"contact",
+"phone",
+"email",
+"meeting",
+"guarantee",
+"warranty",
+"refund",
+"break",
+"broken",
+"program",
+"setup",
+"where",
+"wellington",
+"auckland"
+]);
 
+if(greetingOnly&&!actualQuestion){
 
-  /* ==============================================
-     GREETINGS
-  ============================================== */
+lastTopic="greeting";
 
-  if (hasAny(text, [
-    "hello",
-    "hi",
-    "hey",
-    "kia ora",
-    "morena",
-    "yo",
-    "sup",
-    "gday",
-    "good morning",
-    "good afternoon",
-    "good evening"
-  ])) {
+return "Kia ora! 👋 How can I help you with Tappa today?";
 
-    remember("greeting");
+}
 
-    return `Kia ora! 👋 Welcome to Tappa!
 
-How can I help you today?`;
+/* ---------- THANKS ---------- */
 
-  }
+if(has(text,[
+"thanks",
+"thank you",
+"cheers",
+"appreciate it"
+])){
 
+return "No worries! 🤝 If you have another Tappa question, just ask.";
 
-  /* ==============================================
-     THANKS
-  ============================================== */
+}
 
-  if (hasAny(text, [
-    "thanks",
-    "thank you",
-    "cheers",
-    "appreciate it"
-  ])) {
 
-    return `No worries! 🤝
+/* =====================================================
+   ORDER / PRICE QUESTIONS
+===================================================== */
 
-If you have another question about Tappa, just ask.`;
+const priceQuestion=has(text,[
+"price",
+"prices",
+"cost",
+"costs",
+"how much",
+"pricing",
+"how many dollars",
+"how much money",
+"expensive",
+"cheap"
+]);
 
-  }
+if(priceQuestion){
 
+lastTopic="pricing";
 
-  /* ==============================================
-     FOLLOW-UP PRICING
-  ============================================== */
+if(quantity){
 
-  if (
-    lastTopic === "pricing" &&
-    quantity
-  ) {
+lastQuantity=quantity;
 
-    lastQuantity = quantity;
+return price(quantity);
 
-    return priceForQuantity(quantity);
+}
 
-  }
+return TAPPA.pricing;
 
+}
 
-  /* ==============================================
-     PRICING
-  ============================================== */
 
-  if (asksPrice) {
+/* ---------- FOLLOW-UP QUANTITY ---------- */
 
-    remember("pricing");
+if(
+lastTopic==="pricing" &&
+quantity
+){
 
-    if (quantity) {
+lastQuantity=quantity;
 
-      lastQuantity = quantity;
+return price(quantity);
 
-      return priceForQuantity(quantity);
+}
 
-    }
 
-    return tappa.pricing;
+/* =====================================================
+   DELIVERY
+===================================================== */
 
-  }
+if(has(text,[
+"deliver",
+"delivery",
+"shipping",
+"ship",
+"drop off",
+"dropoff"
+])){
 
+lastTopic="delivery";
 
-  /* ==============================================
-     WHAT IS TAPPA
-  ============================================== */
+if(has(text,[
+"auckland",
+"christchurch",
+"hamilton",
+"tauranga",
+"palmerston north",
+"palmerston"
+])){
 
-  if (hasAny(text, [
-    "what is tappa",
-    "whats tappa",
-    "what does tappa do",
-    "what do you do",
-    "tell me about tappa",
-    "about tappa",
-    "who are you"
-  ])) {
+return `Tappa currently operates in the Wellington region. 🇳🇿
 
-    remember("business");
+We don't want to promise delivery outside the Wellington region without checking first.
 
-    return tappa.business;
+Please contact us:
 
-  }
+📧 Tappa.Aotearoa@gmail.com
+📱 027 275 5475`;
 
+}
 
-  /* ==============================================
-     HOW IT WORKS
-  ============================================== */
+return TAPPA.delivery;
 
-  if (hasAny(text, [
-    "how does it work",
-    "how it works",
-    "how do they work",
-    "how does the card work",
-    "how do the cards work",
-    "how do i use it",
-    "how do i use the card",
-    "what happens when i tap",
-    "what happens if i tap"
-  ])) {
+}
 
-    remember("howItWorks");
 
-    return tappa.howItWorks;
+/* =====================================================
+   PICKUP
+===================================================== */
 
-  }
+if(has(text,[
+"pickup",
+"pick up",
+"collect",
+"collection"
+])){
 
+lastTopic="pickup";
 
-  /* ==============================================
-     NFC
-  ============================================== */
+return `Yep! 👍 Pickup can be arranged.
 
-  if (hasAny(text, [
-    "nfc",
-    "near field",
-    "tap phone",
-    "tap my phone",
-    "phone tap",
-    "tap the card",
-    "contactless"
-  ])) {
+Free delivery is also available within the Wellington region.
 
-    remember("nfc");
+We prefer to meet beforehand so we can get to know your business and make sure everything is set up properly.`;
 
-    return `Tappa cards use NFC technology. 📱
+}
 
-A compatible phone is brought close to the card, and the card opens the business's Google Review page.
+
+/* =====================================================
+   PROGRAMMING / SETUP
+===================================================== */
+
+if(has(text,[
+"program",
+"programme",
+"programming",
+"programmed",
+"set up",
+"setup",
+"configure",
+"configured",
+"configuration",
+"how do you program",
+"how are they programmed",
+"how is it programmed"
+])){
+
+lastTopic="setup";
+
+return `🏷️ Tappa cards are set up with the business's Google Review page link.
+
+The goal is simple:
+
+1. You give Tappa your business's Google Review page.
+2. Tappa sets the card up with that link.
+3. A customer taps the card with a compatible phone.
+4. Their Google Review page opens.
+
+We can help make sure everything is working properly before you receive it.`;
+
+}
+
+
+/* =====================================================
+   HOW IT WORKS
+===================================================== */
+
+if(has(text,[
+"how does it work",
+"how it works",
+"how do they work",
+"how does the card work",
+"how do the cards work",
+"what happens when i tap",
+"what happens if i tap",
+"what does tapping do"
+])){
+
+lastTopic="works";
+
+return TAPPA.works;
+
+}
+
+
+/* =====================================================
+   NFC
+===================================================== */
+
+if(has(text,[
+"nfc",
+"near field",
+"tap phone",
+"tap my phone",
+"tap the card",
+"contactless"
+])){
+
+lastTopic="nfc";
+
+return `📱 Tappa uses NFC technology.
+
+A compatible phone is brought close to the card and the business's Google Review page opens.
 
 No special Tappa app is required.`;
 
-  }
+}
 
 
-  /* ==============================================
-     GOOGLE REVIEWS
-  ============================================== */
+/* =====================================================
+   GOOGLE REVIEWS
+===================================================== */
 
-  if (hasAny(text, [
-    "google review",
-    "google reviews",
-    "google rating",
-    "reviews",
-    "review",
-    "get more reviews",
-    "customer reviews"
-  ])) {
+if(has(text,[
+"google review",
+"google reviews",
+"google rating",
+"review page",
+"reviews",
+"review",
+"get more reviews"
+])){
 
-    remember("reviews");
+lastTopic="reviews";
 
-    return `Tappa makes leaving Google Reviews easier. ⭐
+return `⭐ Tappa makes getting to a business's Google Review page easier.
 
-Instead of customers having to search for the business on Google, they can tap the Tappa card and be taken directly to the business's Google Review page.`;
+Instead of customers having to search for the business, they can tap the Tappa card and be taken directly to the review page.`;
 
-  }
-
-
-  /* ==============================================
-     DELIVERY
-  ============================================== */
-
-  if (asksDelivery) {
-
-    remember("delivery");
-
-    return tappa.delivery;
-
-  }
+}
 
 
-  /* ==============================================
-     PICKUP
-  ============================================== */
+/* =====================================================
+   MEETING
+===================================================== */
 
-  if (asksPickup) {
+if(has(text,[
+"meeting",
+"meet",
+"in person",
+"online",
+"zoom",
+"talk to someone"
+])){
 
-    remember("delivery");
+lastTopic="meeting";
 
-    return `Yep! 👍 Pickup can be arranged.
+return TAPPA.meeting;
 
-Tappa can also deliver for free within the Wellington region.
-
-We prefer to meet beforehand so we can get to know the business and make sure everything is set up properly.`;
-
-  }
-
-
-  /* ==============================================
-     MEETING
-  ============================================== */
-
-  if (asksMeeting) {
-
-    remember("meeting");
-
-    return tappa.meeting;
-
-  }
+}
 
 
-  /* ==============================================
-     GUARANTEE / REFUNDS
-  ============================================== */
+/* =====================================================
+   GUARANTEE
+===================================================== */
 
-  if (hasAny(text, [
-    "warranty",
-    "guarantee",
-    "refund",
-    "money back",
-    "moneyback",
-    "broken",
-    "breaks",
-    "stopped working",
-    "doesnt work",
-    "doesn't work",
-    "not working",
-    "faulty",
-    "problem with card"
-  ])) {
+if(has(text,[
+"guarantee",
+"warranty",
+"refund",
+"money back",
+"broken",
+"breaks",
+"stopped working",
+"not working",
+"doesnt work",
+"doesn't work",
+"faulty"
+])){
 
-    remember("guarantee");
+lastTopic="guarantee";
 
-    return tappa.guarantee;
+return TAPPA.guarantee;
 
-  }
+}
 
 
-  /* ==============================================
-     CONTACT
-  ============================================== */
+/* =====================================================
+   CONTACT
+===================================================== */
 
-  if (hasAny(text, [
-    "contact",
-    "email",
-    "phone number",
-    "phone",
-    "number",
-    "call",
-    "get in touch",
-    "message you"
-  ])) {
+if(has(text,[
+"contact",
+"email",
+"phone number",
+"phone",
+"call",
+"get in touch",
+"message"
+])){
 
-    remember("contact");
+lastTopic="contact";
 
-    return tappa.contact;
+return TAPPA.contact;
 
-  }
-
-
-  /* ==============================================
-     HOURS
-  ============================================== */
-
-  if (hasAny(text, [
-    "hours",
-    "opening hours",
-    "when can i contact",
-    "when are you available",
-    "available",
-    "when are you open",
-    "what time",
-    "are you open"
-  ])) {
-
-    remember("hours");
-
-    return `Our contact hours are:
-
-🗓️ Weekdays: 3:00 PM–8:00 AM the next day
-🗓️ Weekends: Anytime.`;
-
-  }
+}
 
 
-  /* ==============================================
-     ORDERING
-  ============================================== */
+/* =====================================================
+   HOURS
+===================================================== */
 
-  if (hasAny(text, [
-    "order",
-    "buy",
-    "purchase",
-    "get a card",
-    "get one",
-    "want one",
-    "i need a card",
-    "i want a card",
-    "how do i get one"
-  ])) {
+if(has(text,[
+"hours",
+"opening hours",
+"when can i contact",
+"when are you available",
+"when are you open",
+"what time are you available",
+"are you open"
+])){
 
-    remember("ordering");
+lastTopic="hours";
 
-    return `Sweet! 🙌
+return `🕐 Tappa contact hours:
 
-To arrange an order, contact Tappa.
+Weekdays: 3:00 PM–8:00 AM the next day
+Weekends: Anytime.`;
 
-We prefer to arrange a free meeting beforehand so we can get to know your business and work out exactly what you need.
+}
 
-The meeting can be in person or online.
+
+/* =====================================================
+   ORDER
+===================================================== */
+
+if(has(text,[
+"order",
+"buy",
+"purchase",
+"want one",
+"want a card",
+"need a card",
+"get a card",
+"how do i get one"
+])){
+
+lastTopic="ordering";
+
+return `🛒 Sweet! To arrange an order, contact Tappa.
+
+We prefer to arrange a FREE meeting beforehand.
+
+The meeting can be:
+• In person
+• Online
 
 📧 Tappa.Aotearoa@gmail.com
 📱 027 275 5475`;
 
-  }
+}
 
 
-  /* ==============================================
-     LOCATION
-  ============================================== */
+/* =====================================================
+   LOCATION
+===================================================== */
 
-  if (hasAny(text, [
-    "where are you",
-    "where do you operate",
-    "what area",
-    "what areas",
-    "wellington",
-    "lower hutt",
-    "auckland",
-    "christchurch",
-    "hamilton",
-    "porirua",
-    "kapiti",
-    "upper hutt"
-  ])) {
+if(has(text,[
+"where are you",
+"where do you operate",
+"what area",
+"what areas",
+"wellington",
+"lower hutt",
+"upper hutt",
+"porirua",
+"kapiti",
+"auckland",
+"christchurch",
+"hamilton"
+])){
 
-    remember("location");
+lastTopic="location";
 
-    if (
-      hasAny(text, [
-        "auckland",
-        "christchurch",
-        "hamilton"
-      ])
-    ) {
+if(has(text,[
+"auckland",
+"christchurch",
+"hamilton"
+])){
 
-      return `Tappa currently operates in the Wellington region. 🇳🇿
+return `🇳🇿 Tappa currently operates in the Wellington region.
 
-If you're outside the Wellington region, contact Tappa directly and we'll let you know what may be possible.
+We don't want to promise service outside the Wellington region without checking first.
 
-📧 Tappa.Aotearoa@gmail.com
-📱 027 275 5475`;
-
-    }
-
-    return tappa.location;
-
-  }
-
-
-  /* ==============================================
-     PHONE COMPATIBILITY
-  ============================================== */
-
-  if (hasAny(text, [
-    "iphone",
-    "android",
-    "samsung",
-    "compatible",
-    "compatibility",
-    "what phones",
-    "which phones",
-    "work on my phone"
-  ])) {
-
-    remember("phones");
-
-    return `Tappa uses NFC, which is supported by many modern smartphones. 📱
-
-If you're unsure about a particular phone, contact Tappa and we can help check.
+Contact us:
 
 📧 Tappa.Aotearoa@gmail.com
 📱 027 275 5475`;
 
-  }
+}
+
+return TAPPA.location;
+
+}
 
 
-  /* ==============================================
-     SETUP / PROGRAMMING
-  ============================================== */
+/* =====================================================
+   PHONE COMPATIBILITY
+===================================================== */
 
-  if (hasAny(text, [
-    "setup",
-    "set up",
-    "program",
-    "programmed",
-    "programme",
-    "configure",
-    "configuration",
-    "link"
-  ])) {
+if(has(text,[
+"iphone",
+"android",
+"samsung",
+"phone work",
+"will it work",
+"compatible",
+"compatibility",
+"what phones",
+"which phones"
+])){
 
-    remember("setup");
+lastTopic="phones";
 
-    return `Tappa helps get the card set up with the correct Google Review page for the business. 👍
+return `📱 Tappa uses NFC.
 
-We prefer to meet beforehand so we can make sure everything is working properly.`;
+Many modern smartphones support NFC, but compatibility can depend on the specific phone.
 
-  }
+Tell me your phone model and I'll give you the best answer I can.
 
+If you're unsure, contact Tappa and we can help check.`;
 
-  /* ==============================================
-     BUSINESS TYPES
-  ============================================== */
-
-  if (hasAny(text, [
-    "dairy",
-    "shop",
-    "restaurant",
-    "cafe",
-    "café",
-    "business",
-    "company",
-    "store",
-    "barber",
-    "salon",
-    "tradie"
-  ])) {
-
-    remember("business");
-
-    return `Tappa can be useful for lots of local businesses that want to make it easier for customers to leave Google Reviews. ⭐
-
-If you're interested, we'd prefer to meet you first and see what would work best for your business.
-
-The meeting is free and can be in person or online.`;
-
-  }
+}
 
 
-  /* ==============================================
-     YOUNG ENTREPRENEUR
-  ============================================== */
+/* =====================================================
+   BUSINESS TYPE
+===================================================== */
 
-  if (hasAny(text, [
-    "who runs tappa",
-    "who owns tappa",
-    "owner",
-    "run by",
-    "entrepreneur",
-    "young business",
-    "young entrepreneur"
-  ])) {
+if(has(text,[
+"dairy",
+"barber",
+"barbershop",
+"hairdresser",
+"salon",
+"cafe",
+"café",
+"restaurant",
+"shop",
+"store",
+"tradie",
+"builder",
+"plumber",
+"business",
+"company"
+])){
 
-    remember("business");
+lastTopic="business";
 
-    return `Tappa is a young Aotearoa business run by a young entrepreneur, helping local businesses make getting Google Reviews easier. 🇳🇿`;
+let type="business";
 
-  }
+if(has(text,["dairy"])) type="dairy";
+else if(has(text,["barber","barbershop"])) type="barber";
+else if(has(text,["cafe","café"])) type="cafe";
+else if(has(text,["restaurant"])) type="restaurant";
+else if(has(text,["salon","hairdresser"])) type="salon";
+else if(has(text,["tradie","builder","plumber"])) type="tradie";
+
+const examples={
+dairy:"For a dairy, the card could be placed near the checkout so customers can quickly leave a review after buying something.",
+barber:"For a barber, the card could be placed near reception or the checkout so customers can review their experience after a haircut.",
+cafe:"For a café, the card could be placed near the counter so customers can easily leave a review after their visit.",
+restaurant:"For a restaurant, the card could be placed near the checkout or tables so customers can easily reach the Google Review page.",
+salon:"For a salon, the card could be placed at reception or checkout after an appointment.",
+tradie:"For a tradie, the card could be given to customers after a completed job to make leaving a review easier.",
+business:"Tappa can be useful for many local businesses that want to make leaving Google Reviews easier."
+};
+
+return `🏪 ${examples[type]}
+
+If you're interested, we'd prefer to arrange a free meeting and work out what would suit your business.`;
+
+}
 
 
-  /* ==============================================
-     TROUBLESHOOTING
-  ============================================== */
+/* =====================================================
+   TROUBLESHOOTING
+===================================================== */
 
-  if (hasAny(text, [
-    "not working",
-    "doesn't work",
-    "doesnt work",
-    "card won't work",
-    "card wont work",
-    "broken card",
-    "can't tap",
-    "cant tap",
-    "not tapping"
-  ])) {
+if(has(text,[
+"not working",
+"wont work",
+"won't work",
+"cant tap",
+"can't tap",
+"not tapping",
+"doesnt work",
+"doesn't work"
+])){
 
-    remember("troubleshooting");
+lastTopic="troubleshooting";
 
-    return `No worries — we'll help you sort it. 🛠️
+return `🛠️ Let's try to sort that out.
 
-First, make sure NFC is enabled/supported on the phone and try bringing the phone close to the card again.
+First:
+1. Make sure the phone is close to the Tappa card.
+2. Try moving the phone slightly around the card.
+3. Make sure the phone supports NFC.
+4. Try another compatible phone if possible.
 
-If it still doesn't work, contact Tappa:
+Still not working?
+
+Contact Tappa:
 
 📧 Tappa.Aotearoa@gmail.com
 📱 027 275 5475
 
-Remember, Tappa has a forever guarantee — we'll fix it or refund you. ♾️`;
+And remember — Tappa has a forever guarantee. ♾️`;
 
-  }
-
-
-  /* ==============================================
-     GOODBYE
-  ============================================== */
-
-  if (hasAny(text, [
-    "bye",
-    "goodbye",
-    "see ya",
-    "see you",
-    "ka kite"
-  ])) {
-
-    return `Ka kite! 👋
-
-Thanks for checking out Tappa.`;
-
-  }
+}
 
 
-  /* ==============================================
-     FALLBACK
-  ============================================== */
+/* =====================================================
+   WHO RUNS TAPPA
+===================================================== */
 
-  return tappa.fallback;
+if(has(text,[
+"who runs",
+"who owns",
+"owner",
+"run by",
+"entrepreneur",
+"young entrepreneur"
+])){
+
+return `Tappa is a young Aotearoa business run by a young entrepreneur, helping local businesses make getting Google Reviews easier. 🇳🇿`;
+
+}
+
+
+/* =====================================================
+   GOODBYE
+===================================================== */
+
+if(has(text,[
+"bye",
+"goodbye",
+"see ya",
+"see you",
+"ka kite"
+])){
+
+return "Ka kite! 👋 Thanks for checking out Tappa.";
+
+}
+
+
+/* =====================================================
+   FALLBACK
+===================================================== */
+
+return TAPPA.fallback;
 
 }
 
@@ -1266,19 +1277,19 @@ Thanks for checking out Tappa.`;
    ADD MESSAGE
 ===================================================== */
 
-function addMessage(text, type) {
+function addMessage(text,type){
 
-  const messages = document.getElementById("messages");
+const messages=document.getElementById("messages");
 
-  const message = document.createElement("div");
+const message=document.createElement("div");
 
-  message.className = "message " + type;
+message.className="message "+type;
 
-  message.textContent = text;
+message.textContent=text;
 
-  messages.appendChild(message);
+messages.appendChild(message);
 
-  messages.scrollTop = messages.scrollHeight;
+messages.scrollTop=messages.scrollHeight;
 
 }
 
@@ -1287,16 +1298,15 @@ function addMessage(text, type) {
    TYPING
 ===================================================== */
 
-function showTyping() {
+function showTyping(){
 
-  document.getElementById("typing").style.display = "block";
+document.getElementById("typing").style.display="block";
 
 }
 
+function hideTyping(){
 
-function hideTyping() {
-
-  document.getElementById("typing").style.display = "none";
+document.getElementById("typing").style.display="none";
 
 }
 
@@ -1305,29 +1315,31 @@ function hideTyping() {
    SEND
 ===================================================== */
 
-function sendMessage() {
+function sendMessage(){
 
-  const input = document.getElementById("userInput");
+const input=document.getElementById("userInput");
 
-  const text = input.value.trim();
+const text=input.value.trim();
 
-  if (!text) return;
+if(!text)return;
 
-  addMessage(text, "user");
+trackQuestion(text);
 
-  input.value = "";
+addMessage(text,"user");
 
-  showTyping();
+input.value="";
 
-  setTimeout(function() {
+showTyping();
 
-    hideTyping();
+setTimeout(()=>{
 
-    const reply = getResponse(text);
+hideTyping();
 
-    addMessage(reply, "bot");
+const reply=respond(text);
 
-  }, 600);
+addMessage(reply,"bot");
+
+},450);
 
 }
 
@@ -1336,11 +1348,55 @@ function sendMessage() {
    QUICK QUESTIONS
 ===================================================== */
 
-function quickQuestion(question) {
+function quickQuestion(question){
 
-  document.getElementById("userInput").value = question;
+document.getElementById("userInput").value=question;
 
-  sendMessage();
+sendMessage();
+
+}
+
+
+/* =====================================================
+   NEW CONVERSATION
+===================================================== */
+
+function newConversation(){
+
+lastTopic=null;
+lastQuantity=null;
+orderQuantity=null;
+orderStage=null;
+
+const messages=document.getElementById("messages");
+
+messages.innerHTML=`
+
+<div class="message bot">
+Kia ora! 👋 Welcome back to Tappa!
+
+I'm ready to help with prices, orders, NFC, Google Reviews, delivery and more.
+
+What would you like to know?
+</div>
+
+<div class="info-card">
+
+<div class="info-title">⭐ How Tappa works</div>
+
+<div class="review-flow">
+
+<div class="review-step">📱<br>Customer</div>
+<div class="arrow">→</div>
+<div class="review-step">🏷️<br>Tappa card</div>
+<div class="arrow">→</div>
+<div class="review-step">⭐<br>Google Review</div>
+
+</div>
+
+</div>
+
+`;
 
 }
 
@@ -1350,16 +1406,14 @@ function quickQuestion(question) {
 ===================================================== */
 
 document
-  .getElementById("userInput")
-  .addEventListener("keydown", function(event) {
+.getElementById("userInput")
+.addEventListener("keydown",function(event){
 
-    if (event.key === "Enter") {
+if(event.key==="Enter"){
+sendMessage();
+}
 
-      sendMessage();
-
-    }
-
-  });
+});
 
 </script>
 
