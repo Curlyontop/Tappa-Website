@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tappa | Google Review Cards</title>
+
+  <meta
+    name="description"
+    content="Tappa NFC Google review cards make it easier for customers to access a business's Google review page."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5f5;
+      color: #171717;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(900px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .nz {
+      background: #171717;
+      color: white;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .hero {
+      background: white;
+      border-radius: 28px;
+      padding: 65px 30px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 9vw, 72px);
+      line-height: 1;
+      margin: 0 0 20px;
+      letter-spacing: -4px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      font-size: 19px;
+      color: #555;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      background: #171717;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      margin: 5px;
+    }
+
+    .button:hover {
+      opacity: 0.85;
+    }
+
+    section {
+      background: white;
+      border-radius: 22px;
+      padding: 32px;
+      margin: 20px 0;
+    }
+
+    section h2 {
+      margin-top: 0;
+      font-size: 30px;
+      letter-spacing: -1px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .step {
+      background: #f5f5f5;
+      padding: 22px;
+      border-radius: 17px;
+    }
+
+    .step-number {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .prices {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .price {
+      border: 1px solid #ddd;
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .price-number {
+      font-size: 38px;
+      font-weight: 800;
+    }
+
+    .faq {
+      border-top: 1px solid #ddd;
+      padding: 18px 0;
+    }
+
+    .faq:first-child {
+      border-top: none;
+    }
+
+    .faq h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .faq p {
+      margin: 0;
+      color: #555;
+    }
+
+    .contact a {
+      color: #171717;
+      font-weight: 700;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 0;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @media (max-width: 650px) {
+      .steps,
+      .prices {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 48px 20px;
+      }
+
+      section {
+        padding: 25px;
+      }
+
+      header {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+
+    <header>
+      <div class="logo">Tappa</div>
+      <div class="nz">🇳🇿 Aotearoa</div>
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+      <div class="hero">
+
+        <h1>Tap. Review. Done.</h1>
+
+        <p>
+          Tappa makes it easier for businesses to give customers
+          a quick way to access their Google review page using an NFC card.
+        </p>
+
+        <a class="button" href="#how-it-works">
+          How it works
+        </a>
+
+        <a class="button" href="#contact">
+          Contact Tappa
+        </a>
+
+      </div>
+
+
+      <!-- HOW IT WORKS -->
+
+      <section id="how-it-works">
+
+        <h2>How Tappa works</h2>
+
+        <div class="steps">
+
+          <div class="step">
+
+            <div class="step-number">01</div>
+
+            <strong>Tap</strong>
+
+            <p>
+              A customer taps their compatible phone
+              on the Tappa NFC card.
+            </p>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="step-number">02</div>
+
+            <strong>Review</strong>
+
+            <p>
+              The card takes the customer to the
+              business's Google review page.
+            </p>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="step-number">03</div>
+
+            <strong>Done</strong>
+
+            <p>
+              The customer can choose whether
+              they want to leave a review.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PRICING -->
+
+      <section>
+
+        <h2>Pricing</h2>
+
+        <div class="prices">
+
+          <div class="price">
+
+            <div class="price-number">$30</div>
+
+            <strong>1 Tappa card</strong>
+
+            <p>
+              One Tappa NFC Google review card.
+            </p>
+
+          </div>
+
+
+          <div class="price">
+
+            <div class="price-number">$50</div>
+
+            <strong>2 Tappa cards</strong>
+
+            <p>
+              Two Tappa NFC Google review cards.
+            </p>
+
+          </div>
+
+        </div>
+
+        <p>
+          <strong>3+ cards:</strong>
+          Pricing is to be negotiated or decided.
+          Contact Tappa for pricing.
+        </p>
+
+      </section>
+
+
+      <!-- WHAT IS TAPPA -->
+
+      <section>
+
+        <h2>What is Tappa?</h2>
+
+        <p>
+          Tappa provides NFC Google review cards for businesses.
+          The cards give customers a simple way to access a
+          business's Google review page by tapping their compatible
+          phone on the card.
+        </p>
+
+        <p>
+          Tappa is designed to make it easier for businesses
+          to ask customers for Google reviews.
+        </p>
+
+      </section>
+
+
+      <!-- BENEFITS -->
+
+      <section>
+
+        <h2>Why use Tappa?</h2>
+
+        <ul>
+
+          <li>
+            Makes accessing a Google review page simple.
+          </li>
+
+          <li>
+            Uses NFC technology for a quick tap experience.
+          </li>
+
+          <li>
+            Useful for businesses that want to make asking
+            for Google reviews easier.
+          </li>
+
+          <li>
+            Can be placed in a convenient location where
+            customers can see it.
+          </li>
+
+        </ul>
+
+      </section>
+
+
+      <!-- FAQ -->
+
+      <section>
+
+        <h2>Frequently Asked Questions</h2>
+
+
+        <div class="faq">
+
+          <h3>What is a Tappa card?</h3>
+
+          <p>
+            A Tappa card is an NFC card that can take customers
+            to a business's Google review page when they tap
+            their compatible phone on it.
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <h3>How much is one Tappa card?</h3>
+
+          <p>
+            One Tappa card costs $30.
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <h3>How much are two Tappa cards?</h3>
+
+          <p>
+            Two Tappa cards cost $50.
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <h3>How much are three or more cards?</h3>
+
+          <p>
+            Pricing for three or more Tappa cards is currently
+            to be negotiated or decided. Contact Tappa for pricing.
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <h3>How does Tappa work?</h3>
+
+          <p>
+            A customer taps their compatible phone on the
+            Tappa NFC card. The card then takes them to the
+            business's Google review page.
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <h3>Do customers need a Tappa app?</h3>
+
+          <p>
+            No special Tappa app is required to use the NFC card.
+            Phone compatibility can vary.
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <h3>Who is Tappa for?</h3>
+
+          <p>
+            Tappa is designed for businesses that want to make
+            it easier for customers to access their Google review page.
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <h3>How do I order Tappa?</h3>
+
+          <p>
+            Contact Tappa by email or phone to discuss ordering
+            and getting started.
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <h3>Can I order more than two cards?</h3>
+
+          <p>
+            Yes. Pricing for three or more cards is to be
+            negotiated or decided. Contact Tappa for details.
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <h3>What if I have a question that isn't answered here?</h3>
+
+          <p>
+            Contact Tappa directly. Tappa's AI assistant should
+            not guess or make up information that it does not know.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- CONTACT -->
+
+      <section id="contact" class="contact">
+
+        <h2>Contact Tappa</h2>
+
+        <p>
+          Have a question or want to order?
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:Tappa.Aotearoa@gmail.com">
+            Tappa.Aotearoa@gmail.com
+          </a>
+        </p>
+
+        <p>
+          <strong>Phone:</strong>
+          <a href="tel:+64272755475">
+            027 275 5475
+          </a>
+        </p>
+
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      © 2026 Tappa · Aotearoa New Zealand
+
+    </footer>
+
+  </div>
+
+</body>
+</html>
