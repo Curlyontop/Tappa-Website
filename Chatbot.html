@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tappa Chatbot</title>
+  <title>Tappa Support</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
     }
 
     .chatbot {
-      width: 100%;
-      max-width: 420px;
-      height: 600px;
-      margin: 20px auto;
+      max-width: 500px;
+      height: 100vh;
+      max-height: 750px;
+      margin: auto;
       background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
       display: flex;
       flex-direction: column;
     }
@@ -28,26 +29,37 @@
     .header {
       background: #111;
       color: white;
-      padding: 20px;
-      font-size: 20px;
-      font-weight: bold;
+      padding: 22px;
+    }
+
+    .header h2 {
+      margin: 0 0 5px;
+    }
+
+    .header p {
+      margin: 0;
+      font-size: 14px;
+      opacity: 0.8;
     }
 
     .messages {
       flex: 1;
-      padding: 15px;
+      padding: 20px;
       overflow-y: auto;
     }
 
     .message {
-      padding: 12px;
-      margin: 8px 0;
-      border-radius: 15px;
-      max-width: 80%;
+      max-width: 85%;
+      padding: 12px 15px;
+      margin-bottom: 12px;
+      border-radius: 16px;
+      line-height: 1.4;
+      white-space: pre-line;
     }
 
     .bot {
-      background: #eee;
+      background: #eeeeee;
+      color: #111;
       margin-right: auto;
     }
 
@@ -59,23 +71,31 @@
 
     .input-area {
       display: flex;
+      padding: 12px;
       border-top: 1px solid #ddd;
+      gap: 8px;
     }
 
     input {
       flex: 1;
-      padding: 15px;
-      border: none;
-      outline: none;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
       font-size: 16px;
+      outline: none;
     }
 
     button {
       background: #111;
       color: white;
       border: none;
-      padding: 15px;
-      cursor: pointer;
+      border-radius: 12px;
+      padding: 0 18px;
+      font-size: 15px;
+    }
+
+    button:active {
+      opacity: 0.7;
     }
   </style>
 </head>
@@ -85,23 +105,28 @@
 <div class="chatbot">
 
   <div class="header">
-    Tappa Support
+    <h2>Tappa Support 👋</h2>
+    <p>Simple NFC Google Review cards</p>
   </div>
 
   <div class="messages" id="messages">
 
     <div class="message bot">
-      Kia ora 👋 Welcome to Tappa! How can we help you today?
+      Kia ora! 👋 Welcome to Tappa.
+
+      I'm here to answer questions about our Google Review cards, pricing, how they work and contacting us.
+
+      What would you like to know?
     </div>
 
   </div>
 
   <div class="input-area">
     <input
-      type="text"
       id="userInput"
-      placeholder="Type your message..."
-      onkeydown="if(event.key === 'Enter') sendMessage()"
+      type="text"
+      placeholder="Ask Tappa something..."
+      autocomplete="off"
     >
 
     <button onclick="sendMessage()">Send</button>
@@ -110,6 +135,77 @@
 </div>
 
 <script>
+
+const responses = [
+
+  {
+    keywords: ["price", "cost", "how much", "pricing", "$40", "40"],
+    reply:
+      "Our Tappa Google Review cards are $40 each. 💳\n\nIf you'd like to order one, just let us know!"
+  },
+
+  {
+    keywords: ["what is tappa", "what's tappa", "what do you do", "about tappa", "tappa"],
+    reply:
+      "Tappa makes simple NFC Google Review cards for businesses. ⭐\n\nCustomers can tap the card with their phone and quickly get taken to your Google review page."
+  },
+
+  {
+    keywords: ["how does it work", "how it works", "how does the card work", "work"],
+    reply:
+      "It's really simple! 📱\n\n1. A customer taps their phone on the Tappa card.\n2. Their phone opens the business's Google review page.\n3. They can leave a review.\n\nNo app is required."
+  },
+
+  {
+    keywords: ["google review", "reviews", "review"],
+    reply:
+      "Tappa makes it easier for your customers to leave Google reviews. ⭐\n\nThe card uses NFC, so customers can simply tap their phone and be taken to your review page."
+  },
+
+  {
+    keywords: ["nfc", "tap", "phone"],
+    reply:
+      "Tappa uses NFC technology. 📱\n\nMost modern smartphones can simply be brought close to the card to open the link."
+  },
+
+  {
+    keywords: ["contact", "contact you", "message", "available", "hours", "time"],
+    reply:
+      "Our usual contact hours are:\n\n🗓️ Weekdays: 3:00 PM – 8:00 AM the next day\n🗓️ Weekends: Anytime\n\nIf you message outside those hours, we'll get back to you when we're available."
+  },
+
+  {
+    keywords: ["order", "buy", "purchase", "get one", "want one"],
+    reply:
+      "Sweet! 🙌 If you'd like to order a Tappa card, send us a message with what you need and we'll help you out."
+  },
+
+  {
+    keywords: ["shipping", "delivery", "deliver"],
+    reply:
+      "For delivery or pickup questions, send us a message and we'll let you know what's available for your area."
+  },
+
+  {
+    keywords: ["hello", "hi", "hey", "kia ora", "yo", "sup"],
+    reply:
+      "Kia ora! 👋 What can I help you with?"
+  },
+
+  {
+    keywords: ["thanks", "thank you", "cheers"],
+    reply:
+      "No worries! 🤝 If you have any other questions about Tappa, just ask."
+  },
+
+  {
+    keywords: ["who runs", "owner", "run by", "business owner"],
+    reply:
+      "Tappa is a young Aotearoa-owned business, run by a young entrepreneur who wanted to make getting Google reviews easier for local businesses. 🇳🇿"
+  }
+
+];
+
 
 function addMessage(text, type) {
 
@@ -127,6 +223,26 @@ function addMessage(text, type) {
 }
 
 
+function findResponse(text) {
+
+  const lowerText = text.toLowerCase();
+
+  for (const item of responses) {
+
+    for (const keyword of item.keywords) {
+
+      if (lowerText.includes(keyword)) {
+        return item.reply;
+      }
+
+    }
+
+  }
+
+  return "Kia ora! 👋 I'm not sure about that one yet.\n\nTry asking me about Tappa, pricing, Google reviews, how the card works, NFC, ordering, or our contact hours.";
+}
+
+
 function sendMessage() {
 
   const input = document.getElementById("userInput");
@@ -139,52 +255,24 @@ function sendMessage() {
 
   input.value = "";
 
-  setTimeout(() => {
+  setTimeout(function() {
 
-    const lower = text.toLowerCase();
-
-    let reply =
-      "Kia ora! Thanks for messaging Tappa. A member of our team will get back to you soon.";
-
-    if (
-      lower.includes("price") ||
-      lower.includes("cost") ||
-      lower.includes("how much")
-    ) {
-      reply =
-        "Our Tappa Google Review cards are $40 each. If you'd like one, let us know!";
-    }
-
-    else if (
-      lower.includes("contact") ||
-      lower.includes("available") ||
-      lower.includes("when")
-    ) {
-      reply =
-        "Our usual contact hours are 3:00 PM–8:00 AM on weekdays, and anytime on weekends.";
-    }
-
-    else if (
-      lower.includes("tappa") ||
-      lower.includes("what do you do")
-    ) {
-      reply =
-        "Tappa provides simple NFC Google Review cards that make it easier for customers to leave your business a review.";
-    }
-
-    else if (
-      lower.includes("hello") ||
-      lower.includes("hi") ||
-      lower.includes("kia ora")
-    ) {
-      reply =
-        "Kia ora! 👋 How can we help you with Tappa today?";
-    }
+    const reply = findResponse(text);
 
     addMessage(reply, "bot");
 
-  }, 500);
+  }, 400);
+
 }
+
+
+document.getElementById("userInput").addEventListener("keydown", function(event) {
+
+  if (event.key === "Enter") {
+    sendMessage();
+  }
+
+});
 
 </script>
 
