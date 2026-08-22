@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tappa Chatbot</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    .chatbot {
+      width: 100%;
+      max-width: 420px;
+      height: 600px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: #111;
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+    }
+
+    .message {
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 15px;
+      max-width: 80%;
+    }
+
+    .bot {
+      background: #eee;
+      margin-right: auto;
+    }
+
+    .user {
+      background: #111;
+      color: white;
+      margin-left: auto;
+    }
+
+    .input-area {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    input {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="chatbot">
+
+  <div class="header">
+    Tappa Support
+  </div>
+
+  <div class="messages" id="messages">
+
+    <div class="message bot">
+      Kia ora 👋 Welcome to Tappa! How can we help you today?
+    </div>
+
+  </div>
+
+  <div class="input-area">
+    <input
+      type="text"
+      id="userInput"
+      placeholder="Type your message..."
+      onkeydown="if(event.key === 'Enter') sendMessage()"
+    >
+
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+</div>
+
+<script>
+
+function addMessage(text, type) {
+
+  const messages = document.getElementById("messages");
+
+  const message = document.createElement("div");
+
+  message.className = "message " + type;
+
+  message.textContent = text;
+
+  messages.appendChild(message);
+
+  messages.scrollTop = messages.scrollHeight;
+}
+
+
+function sendMessage() {
+
+  const input = document.getElementById("userInput");
+
+  const text = input.value.trim();
+
+  if (!text) return;
+
+  addMessage(text, "user");
+
+  input.value = "";
+
+  setTimeout(() => {
+
+    const lower = text.toLowerCase();
+
+    let reply =
+      "Kia ora! Thanks for messaging Tappa. A member of our team will get back to you soon.";
+
+    if (
+      lower.includes("price") ||
+      lower.includes("cost") ||
+      lower.includes("how much")
+    ) {
+      reply =
+        "Our Tappa Google Review cards are $40 each. If you'd like one, let us know!";
+    }
+
+    else if (
+      lower.includes("contact") ||
+      lower.includes("available") ||
+      lower.includes("when")
+    ) {
+      reply =
+        "Our usual contact hours are 3:00 PM–8:00 AM on weekdays, and anytime on weekends.";
+    }
+
+    else if (
+      lower.includes("tappa") ||
+      lower.includes("what do you do")
+    ) {
+      reply =
+        "Tappa provides simple NFC Google Review cards that make it easier for customers to leave your business a review.";
+    }
+
+    else if (
+      lower.includes("hello") ||
+      lower.includes("hi") ||
+      lower.includes("kia ora")
+    ) {
+      reply =
+        "Kia ora! 👋 How can we help you with Tappa today?";
+    }
+
+    addMessage(reply, "bot");
+
+  }, 500);
+}
+
+</script>
+
+</body>
+</html>
